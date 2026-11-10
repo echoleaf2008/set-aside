@@ -1,30 +1,21 @@
 # Set Aside
 
-Browse UIUC dining hall menus and request food to be premade.
+Browse UIUC dining hall menus and try out requesting food to be premade.
 
-Needs Node 20 or newer. There is nothing to install.
+**Ordering is a demo.** This branch is hosted as static files on GitHub Pages, so requests are saved only in the visitor's own browser and no food is prepared. The `main` branch has the version with a real server and shared kitchen list.
+
+A GitHub Actions job (`.github/workflows/update-menus.yml`) reads today's and tomorrow's menus from EatSmart each morning, commits them to `public/`, and republishes the site.
+
+## Run it locally
 
 ```bash
-node server.js
+node scripts/sync.js
 ```
 
-- Student menu: http://localhost:3000
-- Kitchen list: http://localhost:3000/kitchen
+```bash
+python3 -m http.server 3100 --directory public
+```
 
-The server reads today's and tomorrow's menus from EatSmart once per day (Central time) and saves them in `data/`. It only updates while it is running. If it was off, it catches up when started.
-
-Requests are saved in `data/orders.json`. They are not sent to University Housing.
-
-## Settings
-
-Set these as environment variables.
-
-| Name | Default | Purpose |
-| --- | --- | --- |
-| `PORT` | `3000` | Port to serve on |
-| `HOST` | `127.0.0.1` | Set to `0.0.0.0` to allow other devices. Requires `KITCHEN_PIN`. |
-| `KITCHEN_PIN` | none | PIN required to open the kitchen list |
-| `DAYS_AHEAD` | `1` | Extra days to show after today |
-| `DATA_DIR` | `./data` | Where menus and requests are stored |
+Then open http://localhost:3100. The kitchen list is at `/kitchen.html`.
 
 To include other EatSmart locations, add them to `HALLS` in `lib/eatsmart.js`.

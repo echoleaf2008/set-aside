@@ -216,6 +216,7 @@ form { display: grid; gap: 11px; margin-top: 14px; }
 
 .confirmation p { margin: 0 0 10px; }
 .eyebrow { color: var(--good); font-weight: 700; }
+.demo-note { color: var(--muted); font-size: 0.85rem; }
 .code { font: 700 2.6rem/1 ui-monospace, Menlo, Consolas, monospace; letter-spacing: 0.06em; }
 
 .notice { padding: 40px 0; }

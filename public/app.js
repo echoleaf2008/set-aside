@@ -1,4 +1,4 @@
-import { api, formatDate, formatTime, h } from '/shared.js';
+import { api, formatDate, formatTime, h } from './shared.js';
 
 const DIETS = ['Vegetarian', 'Vegan', 'Halal', 'Kosher', 'Jain'];
 const ALLERGENS = ['Alcohol', 'Coconut', 'Corn', 'Eggs', 'Fish', 'Gelatin', 'Gluten', 'Milk', 'MSG', 'Peanuts', 'Pork', 'Red Dye', 'Sesame', 'Shellfish', 'Soy', 'Sulfites', 'Tree Nuts', 'Wheat'];
@@ -209,6 +209,7 @@ function renderConfirmation() {
     h('p', { class: 'eyebrow' }, 'Request sent'),
     h('p', { class: 'code' }, done.code),
     h('p', {}, `Give this code at ${done.hallName} for ${done.meal.toLowerCase()}, ${formatDate(done.date)} at ${formatTime(done.pickupTime)}.`),
+    h('p', { class: 'demo-note' }, 'Demo only. No food is actually being prepared.'),
     h('button', { type: 'button', class: 'secondary', onClick: () => { state.confirmation = null; render(); } }, 'Start another'),
   );
 }

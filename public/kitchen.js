@@ -1,4 +1,4 @@
-import { api, formatDate, formatTime, h } from '/shared.js';
+import { api, formatDate, formatTime, h } from './shared.js';
 
 const NEXT = { new: ['ready', 'Mark ready'], ready: ['picked_up', 'Picked up'] };
 const LABEL = { new: 'New', ready: 'Ready', picked_up: 'Picked up' };
