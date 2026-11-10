@@ -78,7 +78,7 @@ async function getJson(path) {
 async function activeDates() {
   const meta = await getJson('meta.json');
   const today = chicagoNow().date;
-  return meta.dates.filter((date) => date >= today);
+  return meta.dates.filter((date) => date >= today).slice(0, 2);
 }
 
 function newCode(orders) {

@@ -5,7 +5,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchDays } from '../lib/eatsmart.js';
 
-const DAYS_AHEAD = Number(process.env.DAYS_AHEAD ?? 1);
+// One day more than the site shows, so tomorrow is still available overnight before the morning update.
+const DAYS_AHEAD = Number(process.env.DAYS_AHEAD ?? 2);
 const PUBLIC_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'public');
 const MENU_DIR = path.join(PUBLIC_DIR, 'menus');
 
