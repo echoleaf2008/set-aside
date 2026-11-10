@@ -1,0 +1,9 @@
+{
+  "name": "set-aside",
+  "version": "1.0.0",
+  "description": "Browse UIUC dining hall menus and request food to be premade.",
+  "type": "module",
+  "private": true,
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js" }
+}

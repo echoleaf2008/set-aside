@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Set Aside</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="wrap">
+        <h1>Set Aside</h1>
+        <p>Choose your dining hall food before you get there.</p>
+      </div>
+    </header>
+
+    <div class="wrap controls">
+      <nav id="dates" class="segments" aria-label="Day"></nav>
+      <nav id="halls" class="tabs" aria-label="Dining hall"></nav>
+      <nav id="meals" class="tabs tabs-small" aria-label="Meal"></nav>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search this menu" aria-label="Search this menu" />
+        <div id="diets" class="chips" role="group" aria-label="Dietary preferences"></div>
+        <details class="avoid">
+          <summary>Avoid<span id="avoidCount"></span></summary>
+          <div id="avoid" class="avoid-list" role="group" aria-label="Hide items containing"></div>
+        </details>
+      </div>
+    </div>
+
+    <div class="wrap layout">
+      <main id="menu" aria-live="polite"></main>
+      <aside id="tray" aria-label="Your plate"></aside>
+    </div>
+
+    <button id="trayToggle" class="tray-toggle" type="button" hidden></button>
+
+    <footer class="wrap footer">
+      Independent project, not run by University Housing. Menus come from the public EatSmart site and can change. Check allergens with dining staff.
+    </footer>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
